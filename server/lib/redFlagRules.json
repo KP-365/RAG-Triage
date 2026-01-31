@@ -1,0 +1,108 @@
+{
+  "version": "v1",
+  "red_flags": [
+    {
+      "code": "RF_CHEST_PAIN_SOB",
+      "label": "Chest pain with shortness of breath",
+      "severity": "RED",
+      "criteria_all": [
+        {"fact": "chest_pain", "op": "eq", "value": true},
+        {"fact": "shortness_of_breath", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Chest pain and shortness of breath present."
+    },
+    {
+      "code": "RF_STROKE_SIGNS",
+      "label": "Possible stroke symptoms",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "face_droop", "op": "eq", "value": true},
+        {"fact": "arm_weakness", "op": "eq", "value": true},
+        {"fact": "speech_difficulty", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Stroke warning sign(s) reported."
+    },
+    {
+      "code": "RF_SEVERE_ALLERGY",
+      "label": "Severe allergic reaction features",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "wheeze", "op": "eq", "value": true},
+        {"fact": "throat_swelling", "op": "eq", "value": true},
+        {"fact": "lip_tongue_swelling", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Possible severe allergic reaction feature(s)."
+    },
+    {
+      "code": "RF_SEVERE_PAIN",
+      "label": "Severe pain (9-10/10)",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "severity_score", "op": "gte", "value": 9}
+      ],
+      "evidence_prompt": "Severe pain reported (9-10/10)."
+    },
+    {
+      "code": "RF_CONFUSION",
+      "label": "New confusion or altered mental state",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "confusion", "op": "eq", "value": true},
+        {"fact": "altered_mental_state", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "New confusion or altered mental state reported."
+    },
+    {
+      "code": "RF_SEVERE_BLEEDING",
+      "label": "Severe bleeding",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "severe_bleeding", "op": "eq", "value": true},
+        {"fact": "vomiting_blood", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Severe bleeding reported."
+    },
+    {
+      "code": "RF_COLLAPSE",
+      "label": "Collapse or fainting",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "collapse", "op": "eq", "value": true},
+        {"fact": "fainting", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Collapse or fainting reported."
+    },
+    {
+      "code": "RF_THUNDERCLAP_HEADACHE",
+      "label": "Thunderclap headache",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "thunderclap", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Sudden thunderclap headache reported."
+    },
+    {
+      "code": "RF_NECK_STIFFNESS_FEVER",
+      "label": "Neck stiffness with fever",
+      "severity": "RED",
+      "criteria_all": [
+        {"fact": "neck_stiffness", "op": "eq", "value": true},
+        {"fact": "fever", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Neck stiffness with fever - possible meningitis."
+    },
+    {
+      "code": "RF_NON_BLANCHING_RASH",
+      "label": "Non-blanching rash",
+      "severity": "RED",
+      "criteria_any": [
+        {"fact": "non_blanching_rash", "op": "eq", "value": true}
+      ],
+      "evidence_prompt": "Non-blanching rash reported - possible meningococcal sepsis."
+    }
+  ],
+  "severity_policy": {
+    "default": "GREEN",
+    "escalate_if_any_red_flag": true
+  }
+}
