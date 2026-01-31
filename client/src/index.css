@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* NHS Blue Base */
+  --primary: 211 100% 36%; /* #005EB8 */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 211 100% 36%;
+  
+  --background: 210 20% 98%;
+  --foreground: 215 28% 17%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 215 28% 17%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 28% 17%;
+  
+  --muted: 210 20% 96%;
+  --muted-foreground: 220 10% 46%;
+  
+  --accent: 210 20% 94%;
+  --accent-foreground: 211 100% 36%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 211 100% 36%;
+  
+  --radius: 0.5rem;
+
+  /* Risk band colors (Red, Amber, Green) */
+  --triage-red: 0 84% 60%;
+  --triage-amber: 32 95% 54%;
+  --triage-green: 142 71% 45%;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
+}

@@ -1,0 +1,37 @@
+Remove any patient-visible output that shows severity, urgency, triage category, possible condition, reassurance, interpretation, or next steps
+	•	Ensure the patient view is limited to data entry only, followed by a neutral confirmation screen
+	•	Add the following mandatory text to the patient form:
+“This form does not provide medical advice or triage. Your responses will be reviewed by a clinician.”
+	•	Confirm the patient cannot infer prioritisation or assessment from the interface or workflow
+	•	Replace all clinician-side terms such as “Severity ranking”, “Urgency score”, “AI triage”, “Likely diagnosis”, or “Primary condition”
+	•	Use the following terms instead:
+“AI-flagged level of concern (for clinician review)”
+“Potential risk indicators”
+“Non-exhaustive possible conditions (not a diagnosis)”
+“Decision support summary”
+	•	Reduce the visual prominence of suggested conditions
+	•	Move suggested conditions lower in the clinician view
+	•	Make red flags and safety-critical information the most visually prominent elements
+	•	Add a visible banner at the top of the clinician dashboard stating:
+“AI-generated decision support. Not a diagnosis. Final clinical responsibility rests with the clinician.”
+	•	Add a visible note near the concern level stating:
+“AI output is advisory only and must not determine patient order or management without clinician confirmation.”
+	•	Ensure the system does not automatically reorder, prioritise, or escalate patients based on AI output alone
+	•	Require explicit clinician confirmation for any prioritisation or escalation
+	•	Log whether clinicians accept, modify, or override AI suggestions
+	•	Restrict the clinician-only AI chat so it cannot state certainty, give definitive diagnoses, override clinician decisions, or provide patient-directed advice
+	•	Enforce hedged language such as “consider”, “may be consistent with”, and “red flags to exclude”
+	•	Require the AI to escalate or safety-net when uncertainty is present
+	•	Enforce a fixed clinician output structure in this order:
+AI-flagged level of concern
+Red flags identified or absent
+Immediate considerations
+Possible conditions (non-exhaustive, not a diagnosis)
+Suggested next steps for the clinician
+Factors that would change the assessment
+	•	Prevent long narrative responses or full guideline dumps in clinician outputs
+	•	Do not demo patient-side flows, AI severity language, or anything that appears autonomous during sales
+	•	Demo only the clinician dashboard with disclaimers clearly visible
+	•	Never describe the product internally or externally as an AI triage system, diagnostic AI, or automated prioritisation tool
+	•	Always describe it as a clinician decision support tool, structured intake system, and guideline-aligned safety support
+	•	Apply the principle that the AI may suggest but never decide, the clinician may accept or ignore, and the interface must make this obvious at all times
